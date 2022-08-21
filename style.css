@@ -217,7 +217,7 @@ h2{
         left: 0;
         top:auto;
         bottom: 0;
-        max-height: 10%;
+        max-height: 8%;
         padding: 0;
         z-index: 5;
         
@@ -236,7 +236,7 @@ h2{
 
     .player{
         height: 10%;
-        bottom: 10%;
+        bottom: 8%;
         background-color: white;
     }
 
@@ -265,7 +265,7 @@ h2{
 
     .nav-item img{
         width:unset;
-        height: 80%;
+        height: 40%;
         margin: 0;
     }
 
