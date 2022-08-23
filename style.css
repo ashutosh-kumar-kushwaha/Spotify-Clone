@@ -220,7 +220,6 @@ h2{
         max-height: 8%;
         padding: 0;
         z-index: 5;
-        
     }
 
     nav>ul{
@@ -235,7 +234,7 @@ h2{
     }
 
     .player{
-        height: 10%;
+        height: 8%;
         bottom: 8%;
         background-color: white;
     }
@@ -282,5 +281,10 @@ h2{
     .playlists{
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .card{
+        height: 250px;
+        width: 192px;
     }
 }
