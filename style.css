@@ -325,6 +325,10 @@ h2{
     
 }
 
+.audio-options-mobile{
+    display: none;
+}
+
 
 
 @media only screen and (max-width:1080px) {
@@ -357,7 +361,8 @@ h2{
     .player{
         height: 8%;
         bottom: 8%;
-        background-color: #181818;
+        background-color: #671000;
+        border-radius: 8px;;
     }
 
     .brand{
@@ -376,11 +381,15 @@ h2{
     .nav-link{
         height: 100%;
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 2px;
         align-items: center;
     }
 
     .nav-link-text{
-        display: none;
+        font-size: 0.5rem;
+
     }
 
     .nav-item img{
@@ -407,5 +416,43 @@ h2{
     .card{
         height: 250px;
         width: 192px;
+    }
+
+    .song-info{
+        width: 70%;
+    }
+
+    .thumbnail{
+        height: 75%;
+    }
+
+    .song-name{
+        font-size: 0.7rem;;
+    }
+
+    .singer{
+        font-size: 0.6rem;
+        white-space: nowrap;
+    }
+
+    .like, .miniplayer{
+        display: none;
+    }
+
+    .audio-controls, .audio-options{
+        display : none;
+    }
+
+    .audio-options-mobile{
+        width: 30%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-right: 10px;
+    }
+
+    .other-devices-mobile, .like-mobile, .play-pause-mobile{
+        height: 36%;
     }
 }
