@@ -26,7 +26,38 @@
             </ul>
         </div>
     </nav>
-    <div class="player"></div>
+    <div class="player">
+        <div class="song-info">
+            <img class="thumbnail" src="images/thumbnail.png" alt="Thumbnail">
+            <div class="song-name-singer">
+                <span class="song-name">Kesariya ("From Brahmastra")</span>
+                <span class="singer">Pritam, Arijit Singh, Amitabh Bhattatcharya</span>
+            </div>
+            <img class="like" src="images/like.png" alt="Like" role="button">
+            <img class="miniplayer" src="images/miniplayer.png" role="button" alt="Miniplayer">
+        </div>
+        <div class="audio-controls">
+            <div class="controls">
+                <img class="shuffle" src="images/shuffle.png" alt="Shuffle" role="button">
+                <img class="previous-song" src="images/previous-song.png" alt="Previous song" role="button">
+                <img class="play-pause" src="images/play.png" alt="Play" role="button">
+                <img class="next-song" src="images/next-song.png" alt="Next song" role="button">
+                <img class="repeat" src="images/repeat.png" alt="Repeat" role="button">
+            </div>
+            <div class="progress">
+                <span class="current-position">0:00</span>
+                <input type="range" id="progress-range">
+                <span class="duration">4:30</span>
+            </div>   
+        </div>
+        <div class="audio-options">
+            <img class="lyrics" src="images/lyrics.png" alt="Lyrics" role="button">
+            <img class="queue" src="images/queue.png" alt="Queue" role="button">
+            <img class="other-devices" src="images/other-devices.png" alt=Other Devices" role="button">
+            <img class="mute-unmute" src="images/unmute.png" alt="Mute" role="button">
+            <input type="range" id="volume">
+        </div>
+    </div>
     <div class="top-bar">
         <div class="previous-next">
             <button class="previous"></button>
