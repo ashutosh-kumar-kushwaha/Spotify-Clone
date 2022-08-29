@@ -442,7 +442,7 @@ h2{
         left: 0;
         top:auto;
         bottom: 0;
-        max-height: 8%;
+        max-height: 8vh;
         padding: 0;
         z-index: 5;
     }
@@ -459,8 +459,8 @@ h2{
     }
 
     .player{
-        height: 8%;
-        bottom: 8%;
+        height: 8vh;
+        bottom: 8vh;
         background-color: #671000;
         border-radius: 8px;;
     }
