@@ -545,14 +545,23 @@ h2:hover{
         box-sizing: border-box;
     }
 
+    .container{
+        padding: 0 8px;
+    }
 
     .playlists{
+        gap: 8px;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
+        padding: 20px 8px 0 8px;
     }
 
     .playlist{
         height: 55px;
+    }
+
+    .scrollable-container{
+        column-gap: 8px;
     }
 
     .playlists-2{
