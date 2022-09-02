@@ -13,15 +13,19 @@
     <nav>
         <img class="brand" alt="spotify logo with text" src="images/spotify-logo-with-text.png">
         <ul type="none">
-            <li class="nav-item"><a class="nav-link"><img class="nav-link-image" alt="Home" src="images/home.png"><span class="nav-link-text">Home</span></a></li>
-            <li class="nav-item"><a class="nav-link"><img class="nav-link-image" alt="Search" src="images/search.png"><span class="nav-link-text">Search</span></a></li>
-            <li class="nav-item"><a class="nav-link"><img class="nav-link-image" alt="Library" src="images/library.png"><span class="nav-link-text">Your Library</span></a></li>
+            <li class="nav-item"><a class="nav-link" href=""><img class="nav-link-image" alt="Home"
+                        src="images/home.png"><span class="nav-link-text">Home</span></a></li>
+            <li class="nav-item"><a class="nav-link" href=""><img class="nav-link-image" alt="Search"
+                        src="images/search.png"><span class="nav-link-text">Search</span></a></li>
+            <li class="nav-item"><a class="nav-link" href=""><img class="nav-link-image" alt="Library"
+                        src="images/library.png"><span class="nav-link-text">Your Library</span></a></li>
         </ul>
         <div class="nav-ul-2">
             <ul>
-                <li class="nav-item"><img alt="Create Playlist" src="images/create-playlist.png"><a
-                        class="nav-link">Create Playlist</a></li>
-                <li class="nav-item"><img alt="Liked Songs" src="images/liked-songs.png"><a class="nav-link">Liked
+                <li class="nav-item"><a class="nav-link" href=""><img alt="Create Playlist"
+                            src="images/create-playlist.png">Create Playlist</a></li>
+                <li class="nav-item"><a class="nav-link" hreg=""><img alt="Liked Songs"
+                            src="images/liked-songs.png">Liked
                         Songs</a></li>
             </ul>
         </div>
@@ -40,30 +44,45 @@
             <div class="controls">
                 <img class="shuffle" src="images/shuffle.png" alt="Shuffle" role="button">
                 <img class="previous-song" src="images/previous-song.png" alt="Previous song" role="button">
-                <img class="play-pause" src="images/play.png" alt="Play" role="button">
+                <img class="play-pause" src="images/play.png" alt="Play" role="button" onclick="playPauseAudio()">
                 <img class="next-song" src="images/next-song.png" alt="Next song" role="button">
                 <img class="repeat" src="images/repeat.png" alt="Repeat" role="button">
             </div>
-            <div class="progress">
-                <span class="current-position">0:00</span>
-                <input type="range" id="progress-range">
+            <div class="seek-slider-container">
+                <span class="current-time">00:00</span>
+                <input type="range" id="seek-slider" min="1" max="100" value="0" oninput="seekTo()">
                 <span class="duration">4:30</span>
-            </div>   
+            </div>
         </div>
         <div class="audio-options">
             <img class="lyrics" src="images/lyrics.png" alt="Lyrics" role="button">
             <img class="queue" src="images/queue.png" alt="Queue" role="button">
             <img class="other-devices" src="images/other-devices.png" alt=Other Devices" role="button">
-            <img class="mute-unmute" src="images/unmute.png" alt="Mute" role="button">
-            <input type="range" id="volume">
-        </div>
-
-        <div class="audio-options-mobile">
-            <img class="other-devices-mobile" src="images/other-devices.png" alt="Other Devices" role="button">
-            <img class="like-mobile" src="images/like.png" alt="Like" role="button">
-            <img class="play-pause-mobile" src="images/play-mobile.png" alt="Play" role="button">
+            <img class="mute-unmute" src="images/unmute.png" alt="Mute" role="button" onclick="muteUnmute()">
+            <input type="range" id="volume" min="0" max="100" oninput="setVolume()">
         </div>
     </div>
+    <div class="player-mobile">
+        <div class="song-info-control">
+            <div class="song-info">
+                <img class="thumbnail" src="images/thumbnail.jpg" alt="Thumbnail">
+                <div class="song-name-singer">
+                    <span class="song-name">Kesariya ("From Brahmastra")</span>
+                    <span class="singer">Pritam, Arijit Singh, Amitabh Bhattatcharya</span>
+                </div>
+                <img class="like" src="images/like.png" alt="Like" role="button">
+                <img class="miniplayer" src="images/miniplayer.png" role="button" alt="Miniplayer">
+            </div>
+            <div class="audio-options-mobile">
+                <img class="other-devices-mobile" src="images/other-devices.png" alt="Other Devices" role="button">
+                <img class="like-mobile" src="images/like.png" alt="Like" role="button">
+                <img class="play-pause-mobile" src="images/play-mobile.png" alt="Play" role="button" onclick="playPauseAudio()">
+            </div>
+        </div>
+        <div class="seek-slider-mobile"><div id="seek-slider-mobile"></div></div>
+
+    </div>
+
     <div class="top-bar">
         <div class="previous-next">
             <img class="previous" src="images/previous.png" role="button">
@@ -108,99 +127,135 @@
         </div>
 
         <div class="container">
-            <h2>Made For Ashutosh Kumar Kushwaha</h2>
+            <a href="">
+                <h2>Made For Ashutosh Kumar Kushwaha</h2>
+            </a>
             <div class="playlists-2">
                 <div class="scrollable-container">
                     <div class="playlist-2">
-                        <img src="images/daily-mix-1.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
-                        <div class="playlist-name-2">Daily Mix 1</div>
-                        <div class="details">Pritam, Arijit Singh and more</div>
+                        <div class="playlist-2-container">
+                            <img src="images/daily-mix-1.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
+                            <div class="playlist-name-2">Daily Mix 1</div>
+                            <div class="details">Pritam, Arijit Singh and more</div>
+                        </div>
                     </div>
                     <div class="playlist-2">
-                        <img src="images/daily-mix-2.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
-                        <div class="playlist-name-2">Daily Mix 2</div>
-                        <div class="details">Tanishk Bagchi, Maninder Buttar and more</div>
+                        <div class="playlist-2-container">
+                            <img src="images/daily-mix-2.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
+                            <div class="playlist-name-2">Daily Mix 2</div>
+                            <div class="details">Tanishk Bagchi, Maninder Buttar and more</div>
+                        </div>
                     </div>
                     <div class="playlist-2">
-                        <img src="images/daily-mix-3.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
-                        <div class="playlist-name-2">Daily Mix 3</div>
-                        <div class="details">Shankar-Ehsaan-Loy, Arnab Dutta, Jubin Nautiyal and more</div>
+                        <div class="playlist-2-container">
+                            <img src="images/daily-mix-3.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
+                            <div class="playlist-name-2">Daily Mix 3</div>
+                            <div class="details">Shankar-Ehsaan-Loy, Arnab Dutta, Jubin Nautiyal and more</div>
+                        </div>
                     </div>
                     <div class="playlist-2">
-                        <img src="images/release-radar.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
-                        <div class="playlist-name-2">Release Radar</div>
-                        <div class="details">Catch all the lastest music from the artists you follow</div>
+                        <div class="playlist-2-container">
+                            <img src="images/release-radar.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
+                            <div class="playlist-name-2">Release Radar</div>
+                            <div class="details">Catch all the lastest music from the artists you follow</div>
+                        </div>
                     </div>
                     <div class="playlist-2">
-                        <img src="images/bollywood-mush.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
-                        <div class="playlist-name-2">Bollywood Mush</div>
-                        <div class="details">Best Bollywood songs from last 10 years</div>
+                        <div class="playlist-2-container">
+                            <img src="images/bollywood-mush.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
+                            <div class="playlist-name-2">Bollywood Mush</div>
+                            <div class="details">Best Bollywood songs from last 10 years</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="container">
-            <h2>Your top mixes</h2>
+            <a href="">
+                <h2>Your top mixes</h2>
+            </a>
             <div class="playlists-2">
                 <div class="scrollable-container">
                     <div class="playlist-2">
-                        <img src="images/2010s-mix.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
-                        <div class="playlist-name-2">2010s Mix</div>
-                        <div class="details">Amit Trivedi, Pritam, Arijit Singh and more</div>
+                        <div class="playlist-2-container">
+                            <img src="images/2010s-mix.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
+                            <div class="playlist-name-2">2010s Mix</div>
+                            <div class="details">Amit Trivedi, Pritam, Arijit Singh and more</div>
+                        </div>
                     </div>
                     <div class="playlist-2">
-                        <img src="images/daily-mix-1.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
-                        <div class="playlist-name-2">Daily Mix 1</div>
-                        <div class="details">Pritam, Arijit Singh and more</div>
+                        <div class="playlist-2-container">
+                            <img src="images/daily-mix-1.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
+                            <div class="playlist-name-2">Daily Mix 1</div>
+                            <div class="details">Pritam, Arijit Singh and more</div>
+                        </div>
                     </div>
                     <div class="playlist-2">
-                        <img src="images/2000s-mix.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
-                        <div class="playlist-name-2">2000s Mix</div>
-                        <div class="details">Atif Aslam, KK and more</div>
+                        <div class="playlist-2-container">
+                            <img src="images/2000s-mix.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
+                            <div class="playlist-name-2">2000s Mix</div>
+                            <div class="details">Atif Aslam, KK and more</div>
+                        </div>
                     </div>
                     <div class="playlist-2">
-                        <img src="images/pritam-mix.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
-                        <div class="playlist-name-2">Pritam Mix </div>
-                        <div class="details">Atif Aslam, A.R. Rahman, KK and more</div>
+                        <div class="playlist-2-container">
+                            <img src="images/pritam-mix.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
+                            <div class="playlist-name-2">Pritam Mix </div>
+                            <div class="details">Atif Aslam, A.R. Rahman, KK and more</div>
+                        </div>
                     </div>
                     <div class="playlist-2">
-                        <img src="images/daily-mix-2.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
-                        <div class="playlist-name-2">Daily Mix 2</div>
-                        <div class="details">Tanishk Bagchi, Maninder Buttar and more</div>
+                        <div class="playlist-2-container">
+                            <img src="images/daily-mix-2.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
+                            <div class="playlist-name-2">Daily Mix 2</div>
+                            <div class="details">Tanishk Bagchi, Maninder Buttar and more</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="container">
-            <h2>Recently Played</h2>
+            <a href="">
+                <h2>Recently Played</h2>
+            </a>
             <div class="playlists-2">
                 <div class="scrollable-container">
                     <div class="playlist-2">
-                        <img src="images/this-is-arijit-singh.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
-                        <div class="playlist-name-2">This is Arijit Singh</div>
-                        <div class="details">The Bollywood crooner's best song</div>
+                        <div class="playlist-2-container">
+                            <img src="images/this-is-arijit-singh.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
+                            <div class="playlist-name-2">This is Arijit Singh</div>
+                            <div class="details">The Bollywood crooner's best song</div>
+                        </div>
                     </div>
                     <div class="playlist-2">
-                        <img src="images/release-radar.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
-                        <div class="playlist-name-2">Release Radar</div>
-                        <div class="details">Catch all the lastest music from the artists you follow</div>
+                        <div class="playlist-2-container">
+                            <img src="images/release-radar.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
+                            <div class="playlist-name-2">Release Radar</div>
+                            <div class="details">Catch all the lastest music from the artists you follow</div>
+                        </div>
                     </div>
                     <div class="playlist-2">
-                        <img src="images/2010s-mix.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
-                        <div class="playlist-name-2">2010s Mix</div>
-                        <div class="details">Amit Trivedi, Pritam, Arijit Singh and more</div>
+                        <div class="playlist-2-container">
+                            <img src="images/2010s-mix.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
+                            <div class="playlist-name-2">2010s Mix</div>
+                            <div class="details">Amit Trivedi, Pritam, Arijit Singh and more</div>
+                        </div>
                     </div>
                     <div class="playlist-2">
-                        <img src="images/arijit-singh-all-hits.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
-                        <div class="playlist-name-2">Arijit Singh - All Hits</div>
-                        <div class="details">Pritam, Arijit Singh and more</div>
+                        <div class="playlist-2-container">
+                            <img src="images/arijit-singh-all-hits.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
+                            <div class="playlist-name-2">Arijit Singh - All Hits</div>
+                            <div class="details">Pritam, Arijit Singh and more</div>
+                        </div>
                     </div>
                     <div class="playlist-2">
-                        <img src="images/this-is-atif-aslam.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
-                        <div class="playlist-name-2">Daily Mix 1</div>
-                        <div class="details">Atif Aslam, Shreya Ghoshal and more</div>
+                        <div class="playlist-2-container">
+                            <img src="images/this-is-atif-aslam.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
+                            <div class="playlist-name-2">Daily Mix 1</div>
+                            <div class="details">Atif Aslam, Shreya Ghoshal and more</div>
+                        </div>
                     </div>
                 </div>
             </div>
