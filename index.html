@@ -11,22 +11,41 @@
 
 <body>
     <nav>
-        <img class="brand" alt="spotify logo with text" src="images/spotify-logo-with-text.png">
-        <ul type="none">
-            <li class="nav-item"><a class="nav-link" href=""><img class="nav-link-image" alt="Home"
-                        src="images/home.png"><span class="nav-link-text">Home</span></a></li>
-            <li class="nav-item"><a class="nav-link" href=""><img class="nav-link-image" alt="Search"
-                        src="images/search.png"><span class="nav-link-text">Search</span></a></li>
-            <li class="nav-item"><a class="nav-link" href=""><img class="nav-link-image" alt="Library"
-                        src="images/library.png"><span class="nav-link-text">Your Library</span></a></li>
-        </ul>
-        <div class="nav-ul-2">
-            <ul>
-                <li class="nav-item"><a class="nav-link" href=""><img alt="Create Playlist"
-                            src="images/create-playlist.png">Create Playlist</a></li>
-                <li class="nav-item"><a class="nav-link" hreg=""><img alt="Liked Songs"
-                            src="images/liked-songs.png">Liked
-                        Songs</a></li>
+        <div class="nav-main">
+            <img class="brand" alt="spotify logo with text" src="images/spotify-logo-with-text.png">
+            <ul type="none">
+                <li class="nav-item"><a class="nav-link" href=""><img class="nav-link-image" alt="Home"
+                            src="images/home.png"><span class="nav-link-text home">Home</span></a></li>
+                <li class="nav-item"><a class="nav-link" href=""><img class="nav-link-image" alt="Search"
+                            src="images/search.png"><span class="nav-link-text">Search</span></a></li>
+                <li class="nav-item"><a class="nav-link" href=""><img class="nav-link-image" alt="Library"
+                            src="images/library.png"><span class="nav-link-text">Your Library</span></a></li>
+            </ul>
+
+            <div class="nav-ul-2">
+                <ul>
+                    <li class="nav-item"><a class="nav-link" href=""><img alt="Create Playlist"
+                                src="images/create-playlist.png">Create Playlist</a></li>
+                    <li class="nav-item"><a class="nav-link" hreg=""><img alt="Liked Songs"
+                                src="images/liked-songs.png">Liked
+                            Songs</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="nav-ul-3">
+            <ul type="none">
+                <li class="nav-item"><a class="nav-link" href="">Drowning in Darkness</a></li>
+                <li class="nav-item"><a class="nav-link" href="">Sad Mood</a></li>
+                <li class="nav-item"><a class="nav-link" href="">Classical Indian Pop Songs</a></li>
+                <li class="nav-item"><a class="nav-link" href="">Best Indian Lofi Edits</a></li>
+                <li class="nav-item"><a class="nav-link" href="">Gaming Music 2022</a></li>
+                <li class="nav-item"><a class="nav-link" href="">2010s Mix</a></li>
+                <li class="nav-item"><a class="nav-link" href="">Shreya Ghoshal Radio</a></li>
+                <li class="nav-item"><a class="nav-link" href="">2000s Mix</a></li>
+                <li class="nav-item"><a class="nav-link" href="">00's Romance Hits</a></li>
+                <li class="nav-item"><a class="nav-link" href="">Hits Hots Hindi</a></li>
+                <li class="nav-item"><a class="nav-link" href="">Piano Concentration</a></li>
             </ul>
         </div>
     </nav>
@@ -76,10 +95,13 @@
             <div class="audio-options-mobile">
                 <img class="other-devices-mobile" src="images/other-devices.png" alt="Other Devices" role="button">
                 <img class="like-mobile" src="images/like.png" alt="Like" role="button">
-                <img class="play-pause-mobile" src="images/play-mobile.png" alt="Play" role="button" onclick="playPauseAudio()">
+                <img class="play-pause-mobile" src="images/play-mobile.png" alt="Play" role="button"
+                    onclick="playPauseAudio()">
             </div>
         </div>
-        <div class="seek-slider-mobile"><div id="seek-slider-mobile"></div></div>
+        <div class="seek-slider-mobile">
+            <div id="seek-slider-mobile"></div>
+        </div>
 
     </div>
 
@@ -167,6 +189,13 @@
                             <div class="details">Best Bollywood songs from last 10 years</div>
                         </div>
                     </div>
+                    <div class="playlist-2">
+                        <div class="playlist-2-container">
+                            <img src="images/new-music-hindi.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
+                            <div class="playlist-name-2">New Music Hindi</div>
+                            <div class="details">Arijit Singh, Armaan Malik, Jubin Nautiyal and more</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -212,6 +241,13 @@
                             <div class="details">Tanishk Bagchi, Maninder Buttar and more</div>
                         </div>
                     </div>
+                    <div class="playlist-2">
+                        <div class="playlist-2-container">
+                            <img src="images/daily-mix-3.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
+                            <div class="playlist-name-2">Daily Mix 3</div>
+                            <div class="details">Shankar-Ehsaan-Loy, Arnab Dutta, Jubin Nautiyal and more</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -253,11 +289,19 @@
                     <div class="playlist-2">
                         <div class="playlist-2-container">
                             <img src="images/this-is-atif-aslam.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
-                            <div class="playlist-name-2">Daily Mix 1</div>
+                            <div class="playlist-name-2">This is Atif Aslam</div>
                             <div class="details">Atif Aslam, Shreya Ghoshal and more</div>
                         </div>
                     </div>
+                    <div class="playlist-2">
+                        <div class="playlist-2-container">
+                            <img src="images/daily-mix-2.jpg" class="playlist-thumbnail-2" alt="Thumbnail">
+                            <div class="playlist-name-2">Daily Mix 2</div>
+                            <div class="details">Tanishk Bagchi, Maninder Buttar and more</div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
 
